@@ -1,5 +1,6 @@
 class Conversion:
     def celsius_a_fahrenheit(self, celsius):
+        return(celsius * 9/5) + 32
         """
         Convierte temperatura de Celsius a Fahrenheit.
         
@@ -18,6 +19,7 @@ class Conversion:
         pass
     
     def fahrenheit_a_celsius(self, fahrenheit):
+        return(fahrenheit -32) * 5/9
         """
         Convierte temperatura de Fahrenheit a Celsius.
         
@@ -36,6 +38,7 @@ class Conversion:
         pass
     
     def metros_a_pies(self, metros):
+        return metros * 3.281
         """
         Convierte distancia de metros a pies.
         
@@ -53,6 +56,7 @@ class Conversion:
         pass
     
     def pies_a_metros(self, pies):
+        return pies * 0.3048
         """
         Convierte distancia de pies a metros.
         
@@ -70,6 +74,9 @@ class Conversion:
         pass
     
     def decimal_a_binario(self, decimal):
+        if decimal < 0>:
+            raise ValueError("el numero debe de ser mayor a 0 o positivo")
+        return bin(decimal)[2:]
         """
         Convierte un número decimal a su representación binaria.
         
@@ -86,6 +93,9 @@ class Conversion:
         pass
     
     def binario_a_decimal(self, binario):
+        if not set (binario) <={"0", "1"}:
+            raise ValueError("El numero no es valido para binario")
+            return int(binario, 2)
         """
         Convierte un número binario a decimal.
         
@@ -102,6 +112,23 @@ class Conversion:
         pass
     
     def decimal_a_romano(self, numero):
+        if not(1 <= numero <= 3999):
+            raise ValueError("El numero debe ser mayor a 1 y debe estar entre 3999")
+
+        valores = [
+            (1000, "M"), (900, "CM"), (500, "D"), (400, "CD"), (100, "C"),
+            (90, "XC"), (50, "L"), (40, "XL"), (10, "X"),
+            (9, "IX"), (5, "V"), (4, "IV"), (1, "I") 
+            
+        ]
+
+        RESULTADO = ""
+        for valor, simbolo in valores:
+            while numero >= valor:
+                resultado += simbolo
+                resultado -= valor
+        return resultado
+
         """
         Convierte un número decimal a numeración romana.
         
@@ -118,6 +145,20 @@ class Conversion:
         pass
     
     def romano_a_decimal(self, romano):
+        valores = {
+            "I": 1, "V": 1, "X": 1, "L": 1, 
+            "C": 1, "D": 1, "M": 1
+        }
+        total= 0
+        prev = 0
+        for c in romano [::-1]:
+            v = valores [c]
+            if v < prev:
+                total -= V
+            else:
+                    total += V
+                prev = V
+        return total
         """
         Convierte un número romano a decimal.
         
@@ -134,6 +175,21 @@ class Conversion:
         pass
     
     def texto_a_morse(self, texto):
+        morse = {
+            "A": ".-", "B": "-...", "C": "-.-.", "D": "-..",
+            "E": ".", "F": "..-.", "G": "--.", "H": "....",
+            "I": "..", "J": ".---", "K": "-.-", "L": ".-..",
+            "M": "--", "N": "-.", "O": "---", "P": ".--.",
+            "Q": "--.-", "R": ".-.", "S": "...", "T": "-",
+            "U": "..-", "V": "...-", "W": ".--", "X": "-..-",
+            "Y": "-.--", "Z": "--..",
+            "0": "-----", "1": ".----", "2": "..---", "3": "...--",
+            "4": "....-", "5": ".....", "6": "-....", "7": "--...",
+            "8": "---..", "9": "----."
+        }
+        text = texto.upper()
+        return "".join(morse[c] for c in texto if c in morse)
+
         """
         Convierte texto a código Morse.
         
@@ -150,6 +206,19 @@ class Conversion:
         pass
     
     def morse_a_texto(self, morse):
+        morse = {
+             ".-": "A", "-...": "B", "-.-.": "C", "-..": "D",
+            ".": "E", "..-.": "F", "--.": "G", "....": "H",
+            "..": "I", ".---": "J", "-.-": "K", ".-..": "L",
+            "--": "M", "-.": "N", "---": "O", ".--.": "P",
+            "--.-": "Q", ".-.": "R", "...": "S", "-": "T",
+            "..-": "U", "...-": "V", ".--": "W", "-..-": "X",
+            "-.--": "Y", "--..": "Z",
+            "-----": "0", ".----": "1", "..---": "2", "...--": "3",
+            "....-": "4", ".....": "5", "-....": "6", "--...": "7",
+            "---..": "8", "----.": "9"
+        }
+        return "". join(morse[c] for c in codigo.split() if c in morse)
         """
         Convierte código Morse a texto.
         
