@@ -16,7 +16,7 @@ class Conversion:
             celsius_a_fahrenheit(0) -> 32.0
             celsius_a_fahrenheit(100) -> 212.0
         """
-        pass
+        
     
     def fahrenheit_a_celsius(self, fahrenheit):
         return(fahrenheit -32) * 5/9
@@ -35,7 +35,7 @@ class Conversion:
             fahrenheit_a_celsius(32) -> 0.0
             fahrenheit_a_celsius(212) -> 100.0
         """
-        pass
+       
     
     def metros_a_pies(self, metros):
         return metros * 3.281
@@ -53,7 +53,7 @@ class Conversion:
         Ejemplo:
             metros_a_pies(1) -> 3.28084
         """
-        pass
+    
     
     def pies_a_metros(self, pies):
         return pies * 0.3048
@@ -71,7 +71,7 @@ class Conversion:
         Ejemplo:
             pies_a_metros(3.28084) -> 1.0
         """
-        pass
+        
     
     def decimal_a_binario(self, decimal):
         if decimal < 0>:
@@ -90,7 +90,7 @@ class Conversion:
             decimal_a_binario(10) -> "1010"
             decimal_a_binario(255) -> "11111111"
         """
-        pass
+      
     
     def binario_a_decimal(self, binario):
         if not set (binario) <={"0", "1"}:
@@ -109,7 +109,7 @@ class Conversion:
             binario_a_decimal("1010") -> 10
             binario_a_decimal("11111111") -> 255
         """
-        pass
+     
     
     def decimal_a_romano(self, numero):
         if not(1 <= numero <= 3999):
@@ -142,7 +142,7 @@ class Conversion:
             decimal_a_romano(9) -> "IX"
             decimal_a_romano(1994) -> "MCMXCIV"
         """
-        pass
+    
     
     def romano_a_decimal(self, romano):
         valores = {
@@ -172,7 +172,7 @@ class Conversion:
             romano_a_decimal("IX") -> 9
             romano_a_decimal("MCMXCIV") -> 1994
         """
-        pass
+        
     
     def texto_a_morse(self, texto):
         morse = {
@@ -203,7 +203,7 @@ class Conversion:
             texto_a_morse("SOS") -> "... --- ..."
             texto_a_morse("HELLO") -> ".... . .-.. .-.. ---"
         """
-        pass
+        
     
     def morse_a_texto(self, morse):
         morse = {
@@ -232,4 +232,4 @@ class Conversion:
             morse_a_texto("... --- ...") -> "SOS"
             morse_a_texto(".... . .-.. .-.. ---") -> "HELLO"
         """
-        pass
+        
