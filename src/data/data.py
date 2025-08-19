@@ -5,6 +5,10 @@ class Data:
     """
     
     def invertir_lista(self, lista):
+        lista-invertida = []
+        for i in range(len(lista) -1, -1, -1):
+            lista-invertida.append(lista[i])
+            return lista-invertida
         """
         Invierte el orden de los elementos en una lista sin usar reversed() o lista[::-1].
         
@@ -17,6 +21,12 @@ class Data:
         pass
     
     def buscar_elemento(self, lista, elemento):
+
+        for i in range(len(lista)):
+            if lista[i] == elemento:
+                return i 
+        return -1
+
         """
         Busca un elemento en una lista y devuelve su índice (o -1 si no existe).
         Implementación manual sin usar index().
@@ -31,6 +41,11 @@ class Data:
         pass
     
     def eliminar_duplicados(self, lista):
+        lista-actual = []
+        for i in lista:
+            if i not in lista-actual:
+                lista-actual.append(i)
+        return lista-actual
         """
         Elimina elementos duplicados de una lista sin usar set().
         Mantiene el orden original de aparición.
@@ -44,6 +59,9 @@ class Data:
         pass
     
     def merge_ordenado(self, lista1, lista2):
+        lista-combinada = []
+        for i in lista:
+            
         """
         Combina dos listas ordenadas en una sola lista ordenada.
         
